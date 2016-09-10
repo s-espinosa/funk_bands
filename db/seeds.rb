@@ -84,6 +84,6 @@ bands = [["Funkadelic",          ["George Clinton",
 bands.each do |band, members|
   new_band = Band.create(name: band)
   members.each do |member|
-    new_band.members.create(name: member)
+    new_band.musicians << Musician.find_or_create_by(name: member)
   end
 end
