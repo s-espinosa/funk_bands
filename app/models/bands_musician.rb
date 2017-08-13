@@ -2,5 +2,5 @@ class BandsMusician < ActiveRecord::Base
   belongs_to :band
   belongs_to :musician
 
-  validates_uniqueness_of :band_id, scope: :musician_id
+  validates_uniqueness_of :musician_id, scope: :band_id
 end
